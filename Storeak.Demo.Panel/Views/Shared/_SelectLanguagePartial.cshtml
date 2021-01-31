@@ -1,0 +1,57 @@
+
+@using Microsoft.AspNetCore.Http.Extensions;
+@inject SessionHandler SessionHandler;
+@{
+    var Language = SessionHandler.Language;
+    var url = Context.Request.GetDisplayUrl();
+    var assetPath = StoreakApiService.Core.Projects.ApiProjectSettings.AdminAssetPath + "keentheme/";
+}
+<div class="kt-header__topbar-item kt-header__topbar-item--langs">
+    <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="10px,0px" aria-expanded="false">
+        <span class="kt-header__topbar-icon">
+            @if (Language == "ar")
+            {
+                <img class="" src="@(assetPath)media/flags/008-saudi-arabia.svg" alt="">
+            }
+            else
+            {
+                <img class="" src="@(assetPath)media/flags/020-flag.svg" alt="">
+            }
+        </span>
+    </div>
+    <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround" x-placement="bottom-end" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(658px, 50px, 0px);">
+        <ul class="kt-nav kt-margin-t-10 kt-margin-b-10">
+
+            <li class="kt-nav__item">
+                <a asp-controller="Home"
+                   asp-action="SetLanguage"
+                   asp-route-culture="en" asp-route-returnUrl="@url" class="kt-nav__link">
+                    <span class="kt-nav__link-icon"><img src="@(assetPath)media/flags/020-flag.svg" alt=""></span>
+                    <span class="kt-nav__link-text">English</span>
+                </a>
+            </li>
+            <li class="kt-nav__item">
+                <a asp-controller="Home"
+                   asp-action="SetLanguage"
+                   asp-route-culture="ar" asp-route-returnUrl="@url" class="kt-nav__link">
+                    <span class="kt-nav__link-icon"><img src="@(assetPath)media/flags/008-saudi-arabia.svg" alt=""></span>
+                    <span class="kt-nav__link-text">Arabic</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+@*<div title="@Localizer["Request culture provider:"] @requestCulture?.Provider?.GetType().Name">
+        <form class="form-inline" id="selectLanguage" asp-controller="Home" asp-action="SetLanguage" asp-route-returnUrl="@Context.Request.Path" method="post" class="form-horizontal" role="form">
+            <label class="form-label" style="padding-right:5px">LANGUAGE: </label>
+            <div class="input-group">
+
+                <select class="custom-select" name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" asp-items="cultureItems"></select>
+                <div class="input-group-append">
+                    <button type="submit" class="btn btn-outline-secondary">Save</button>
+                </div>
+            </div>
+        </form>
+    </div>*@

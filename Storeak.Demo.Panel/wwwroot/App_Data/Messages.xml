@@ -1,0 +1,83 @@
+<Messages>
+  <Languages>
+    <Language>ar</Language>
+    <Language>en</Language>
+  </Languages>
+  <Message Name="InternalServerError">
+    <ar>خطأ في الخادم الداخلي.</ar>
+    <en>Internal Server Error.</en>
+  </Message>
+  <Message Name="Action">
+    <ar>عمل</ar>
+    <en>Action</en>
+  </Message>
+  <Message Name="Actions">
+    <ar>أفعال</ar>
+    <en>Actions</en>
+  </Message>
+  <Message Name="Status">
+    <ar>الحالة</ar>
+    <en>Status</en>
+  </Message>
+  <Message Name="Home">
+    <ar>الصفحة الرئيسية</ar>
+    <en>Home</en>
+  </Message>
+  <Message Name="Close">
+    <ar>أغلق</ar>
+    <en>Close</en>
+  </Message>
+  <Message Name="Next">
+    <ar>التالى</ar>
+    <en>Next</en>
+  </Message>
+  <Message Name="Previous">
+    <ar>السابق</ar>
+    <en>Previous</en>
+  </Message>
+  <Message Name="NewRecord">
+    <ar>رقم قياسي جديد</ar>
+    <en>New Record</en>
+  </Message>
+  <Message Name="Create">
+    <ar>خلق</ar>
+    <en>Create</en>
+  </Message>
+  <Message Name="Update">
+    <ar>تحديث</ar>
+    <en>Update</en>
+  </Message>
+  <Message Name="Delete">
+    <ar>حذف</ar>
+    <en>Delete</en>
+  </Message>
+  <Message Name="Enable">
+    <ar>ممكن</ar>
+    <en>Enable</en>
+  </Message>
+  <Message Name="Disable">
+    <ar>تعطيل</ar>
+    <en>Disable</en>
+  </Message>
+  <Message Name="Classes">
+    <ar>الطبقات</ar>
+    <en>Classes</en>
+  </Message>
+  <Message Name="Class">
+    <ar>صف دراسي</ar>
+    <en>Class</en>
+  </Message>
+  <Message Name="Name">
+    <ar>اسم</ar>
+    <en>Name</en>
+  </Message>
+  <Message Name="IdRequired">
+    <ar>معرف مطلوب.</ar>
+    <en>Id is required.</en>
+  </Message>
+  <Message Name="NameRequired">
+    <ar>مطلوب اسم.</ar>
+    <en>Name is required.</en>
+  </Message>
+ 
+</Messages>

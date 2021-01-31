@@ -1,0 +1,28 @@
+﻿@model List<GetAllTypeModel>
+@inject ResourceMessages ResourceMessages
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>@ResourceMessages.Name</th>
+                    <th class="no-sort">@ResourceMessages.Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Name</td>
+                        <td>
+                            <a href="javascript:void(0);" onclick="OpenModal('@Url.Action("UpdateStoreType","StoreType",new {id= @item.Id})')" class="btn btn-sm btn-clean btn-icon btn-icon-md" title="Edit">
+                                <i class="la la-edit"></i>
+                            </a>
+                            <a href="javascript:void(0);" onclick="OpenModal('@Url.Action("DeleteStoreType","StoreType",new {id= @item.Id,Name=item.Name})')" class="btn btn-sm btn-clean btn-icon btn-icon-md" title="Delete">
+                                <i class="la la-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>

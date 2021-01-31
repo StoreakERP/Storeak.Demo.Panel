@@ -1,0 +1,49 @@
+﻿@inject ResourceMessages ResourceMessages
+<div class="kt-subheader   kt-grid__item" id="kt_subheader">
+    <div class="kt-container  kt-container--fluid ">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="~/Home/Index" class="btn-loader"> @ResourceMessages.Home</a></li>
+                <li class="breadcrumb-item">@ResourceMessages.StoreTypes</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
+    <div class="kt-portlet kt-portlet--mobile">
+        <div class="kt-portlet__head">
+            <div class="kt-portlet__head-label">
+                <h3 class="kt-portlet__head-title">
+                    @ResourceMessages.StoreTypes
+                </h3>
+            </div>
+            <div class="kt-portlet__head-toolbar">
+                <div class="kt-portlet__head-wrapper">
+                    <a href="javascript:void(0);" onclick="OpenModal('@Url.Action("CreateStoreType","StoreType")')" class="btn btn-default btn-bold btn-upper btn-font-sm">
+                        <i class="flaticon2-add-1"></i>
+                        @ResourceMessages.NewRecord
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="kt-portlet__body" id="table_div">
+        </div>
+    </div>
+</div>
+@section script
+    {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            LoadTable('@Url.Action("StoreTypeList", "StoreType")', 'table_div');
+        });
+            var onSuccess = function (data) {
+                ModalSuccessAlert(data);
+                if (data.success) {
+                    LoadTable('@Url.Action("StoreTypeList", "StoreType")', 'table_div');
+                }
+            };
+            var onFailed = function (data) {
+                FailedAlert(data);
+            };
+    </script>
+}

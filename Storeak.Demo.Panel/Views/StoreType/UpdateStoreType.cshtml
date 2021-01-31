@@ -1,0 +1,43 @@
+﻿@model UpdateTypeModel
+@inject ResourceMessages ResourceMessages
+<div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">@ResourceMessages.UpdateStoreTypeModalTitle</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<form asp-controller="StoreType" asp-action="UpdateStoreType" data-ajax="true" data-ajax-method="POST" data-ajax-success="onSuccess" data-ajax-failure="onFailed" class="kt-form kt-form--label-right">
+    <div class="modal-body">
+        <div id="alert" role="alert">
+            <div class="alert-text"></div>
+        </div>
+        <div class="kt-portlet__body">
+            <div class="form-group row">
+                <div class="col-md-12">
+                    <label>@ResourceMessages.Name</label>
+                    <input asp-for="Name" type="text" class="form-control">
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-brand" data-dismiss="modal">@ResourceMessages.Close</button>
+        <button type="submit" class="btn btn-brand">@ResourceMessages.Update</button>
+    </div>
+</form>
+
+<script>
+    $(function () {
+        $("form").validate({
+            rules: {
+                Name: "required",
+            },
+            messages: {
+                Name: '@ResourceMessages.NameRequired'
+            },
+        });
+    });
+</script>
+

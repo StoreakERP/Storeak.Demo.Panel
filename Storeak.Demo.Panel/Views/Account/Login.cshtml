@@ -1,0 +1,163 @@
+﻿@model LoginModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+@{
+    var assetPath = StoreakApiService.Core.Projects.ApiProjectSettings.AdminAssetPath + "keentheme/";
+}
+<head>
+    <meta charset="utf-8" />
+    <title>Storeak</title>
+    <meta name="description" content="User login example">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--begin::Fonts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+    <script>
+        WebFont.load({
+            google: { "families": ["Poppins:300,400,500,600,700"] },
+            active: function () {
+                sessionStorage.fonts = true;
+            }
+        });
+    </script>
+
+    <!--end::Fonts -->
+    <!--begin::Page Custom Styles(used by this page) -->
+    <link href="@(assetPath)css/demo1/pages/login/login-v1.css" rel="stylesheet" type="text/css" />
+    <!--end::Page Custom Styles -->
+    <!--begin::Global Theme Styles(used by all pages) -->
+    <link href="@(assetPath)vendors/global/vendors.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="@(assetPath)css/demo1/style.bundle.css" rel="stylesheet" type="text/css" />
+    <!--end::Global Theme Styles -->
+    <!--begin::Layout Skins(used by all pages) -->
+
+    <link href="@(assetPath)css/demo1/skins/header/base/light.css" rel="stylesheet" type="text/css" />
+    <link href="@(assetPath)css/demo1/skins/header/menu/light.css" rel="stylesheet" type="text/css" />
+    <link href="@(assetPath)css/demo1/skins/brand/navy.css" rel="stylesheet" type="text/css" />
+    <link href="@(assetPath)css/demo1/skins/aside/navy.css" rel="stylesheet" type="text/css" />	    <!--end::Layout Skins -->
+    <link rel="shortcut icon" href="@(assetPath)media/logos/SBlue.png" />
+</head>
+<!-- end::Head -->
+<!-- begin::Body -->
+<body style="background-color:#0C1F97;background-image: url(@(assetPath)media/misc/bg_1.jpg);"  class="kt-login-v1--enabled kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--enabled kt-subheader--transparent kt-aside--enabled kt-aside--fixed kt-page--loading">
+    <!-- begin:: Page -->
+    <div class="kt-grid kt-grid--ver kt-grid--root">
+        <div class="kt-grid__item  kt-grid__item--fluid kt-grid kt-grid--hor kt-login-v1" id="kt_login_v1">
+            <!--begin::Item-->
+            <div class="kt-grid__item">
+                <!--begin::Heade-->
+                <div class="kt-login-v1__head">
+                    <div class="kt-login-v1__logo">
+                        <a href="#">
+                            <img src="@(assetPath)media/logos/logo.png" width="150" />
+                        </a>
+                    </div>
+                </div>
+                <!--begin::Head-->
+            </div>
+            <!--end::Item-->
+            <!--begin::Item-->
+            <div class="kt-grid__item  kt-grid kt-grid--ver  kt-grid__item--fluid">
+                <!--begin::Body-->
+                <div class="kt-login-v1__body">
+                    <!--begin::Section-->
+                    <div class="kt-login-v1__section">
+                        <div class="kt-login-v1__info">
+                            <h3 class="kt-login-v1__intro">Whatever CTA's wave purpose important exit element</h3>
+                            <p>Lorem ipsum lian amet estudiat</p>
+                        </div>
+                    </div>
+                    <!--begin::Section-->
+                    <!--begin::Separator-->
+                    <div class="kt-login-v1__seaprator"></div>
+                    <!--end::Separator-->
+                    <!--begin::Wrapper-->
+                    <div class="kt-login-v1__wrapper">
+                        <div class="kt-login-v1__container">
+                            <h3 class="kt-login-v1__title">
+                                Sign To Account
+                            </h3>
+                            <div id="alert" role="alert" class="alert alert-solid-danger alert-bold" style="display:none">
+                                <div class="alert-text"></div>
+                            </div>
+                            <!--begin::Form-->
+                            <form asp-controller="Account" asp-action="Login" method="post" class="kt-login-v1__form kt-form">
+                                <div class="form-group">
+                                    <input asp-for="UserName" class="form-control" type="text" placeholder="Username" name="username">
+                                </div>
+                                <div class="form-group">
+                                    <input asp-for="Password" class="form-control" type="password" placeholder="Password" name="password">
+                                </div>
+                                <div class="kt-login-v1__actions">
+                                    <a href="~/Account/ForgetPassword" class="kt-login-v1__forgot">
+                                        Forgot Password ?
+                                    </a>
+                                    <button type="submit" class="btn btn-pill btn-elevate">Sign In</button>
+                                </div>
+                            </form>
+                            <!--end::Form-->
+
+                        </div>
+                    </div>
+                    <!--end::Wrapper-->
+                </div>
+                <!--begin::Body-->
+            </div>
+            <!--end::Item-->
+
+        </div>
+    </div>
+    <!-- end:: Page -->
+    <!-- begin::Global Config(global config for global JS sciprts) -->
+    <script>
+        var KTAppOptions = {
+            "colors": {
+                "state": {
+                    "brand": "#5d78ff",
+                    "metal": "#c4c5d6",
+                    "light": "#ffffff",
+                    "accent": "#00c5dc",
+                    "primary": "#5867dd",
+                    "success": "#34bfa3",
+                    "info": "#36a3f7",
+                    "warning": "#ffb822",
+                    "danger": "#fd3995",
+                    "focus": "#9816f4"
+                },
+                "base": {
+                    "label": [
+                        "#c5cbe3",
+                        "#a1a8c3",
+                        "#3d4465",
+                        "#3e4466"
+                    ],
+                    "shape": [
+                        "#f0f3ff",
+                        "#d9dffa",
+                        "#afb4d4",
+                        "#646c9a"
+                    ]
+                }
+            }
+        };
+    </script>
+    <!-- end::Global Config -->
+    <!--begin::Global Theme Bundle(used by all pages) -->
+    <script src="~/Storeak_Pos_v1.0.0.js"></script>
+    <script src="@(assetPath)vendors/global/vendors.bundle.js" type="text/javascript"></script>
+    <script src="@(assetPath)js/demo1/scripts.bundle.js" type="text/javascript"></script>
+    <!--end::Global Theme Bundle -->
+    <script>
+             $(document).ready(function () {
+            var message = '@TempData["Message"]';
+                 if (message.length > 0) {
+                     SuccessorFailedAlert(message, "False");
+            }
+        });
+    </script>
+</body>
+<!-- end::Body -->
+</html>

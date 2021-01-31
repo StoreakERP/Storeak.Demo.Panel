@@ -1,0 +1,19 @@
+﻿@inject ResourceMessages ResourceMessages
+<div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">@ResourceMessages.DeleteConfirmationMessage(ViewBag.Name, ResourceMessages.StoreType)</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<form asp-controller="StoreType" asp-action="DeleteStoreType" data-ajax="true" data-ajax-method="POST" data-ajax-success="onSuccess" data-ajax-failure="onFailed" class="kt-form kt-form--label-right">
+    <div class="modal-body">
+        <div id="alert" role="alert">
+            <div class="alert-text"></div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-brand" data-dismiss="modal">@ResourceMessages.Close</button>
+        <button type="submit" class="btn btn-brand">@ResourceMessages.Delete</button>
+    </div>
+</form>
+
