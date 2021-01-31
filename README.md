@@ -1,0 +1,1 @@
+# Storeak.Demo.Panel
