@@ -6,7 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
-    <PackageReference Include="Storeak.Api.Models" Version="1.6.41" />
+    <PackageReference Include="Storeak.Api.Core" Version="1.6.89" />
   </ItemGroup>
 
 </Project>
